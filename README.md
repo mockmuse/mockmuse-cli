@@ -4,38 +4,53 @@ A small Python CLI starter for mock.muse.
 
 It prints a greeting and lists the skills used across my projects — nothing more, nothing secret. It runs with the Python standard library only.
 
-## Run
+## Install
 
 ```bash
-python3 main.py
+pip install mockmuse-cli
+```
+
+Requires Python 3.9 or newer. No third-party dependencies.
+
+## Usage
+
+```bash
+mockmuse
 ```
 
 Expected output:
 
 ```text
 Hello from mock.muse 🦞
-Skills: Python, JavaScript, TypeScript, HTML & CSS, Git, GitHub, automation
+Skills:
+- Python
+- JavaScript
+- TypeScript
+- HTML & CSS
+- Git, GitHub, and automation
 ```
 
-## Structure
+Other commands:
 
-```text
-mockmuse-cli/
-├── main.py           # Entry point — prints the greeting and skills
-├── requirements.txt  # Standard library only, no third-party packages
-└── README.md         # This file
+```bash
+mockmuse --help      # show help
+mockmuse --version   # show version
+mockmuse --skills    # print the skills list only
 ```
 
-Planned structure as the CLI grows (plan-first, no deployment without a separate go-ahead):
+You can also run it as a module:
 
-```text
-mockmuse-cli/
-├── mockmuse/
-│   ├── __init__.py
-│   ├── cli.py        # Argument parsing
-│   └── skills.py     # Skill / project listing
-└── tests/
-    └── test_cli.py   # Self-tests
+```bash
+python -m mockmuse_cli
+```
+
+## Development
+
+```bash
+git clone https://github.com/mockmuse/mockmuse-cli.git
+cd mockmuse-cli
+pip install -e ".[dev]"
+python -m pytest
 ```
 
 ## Skills
@@ -47,11 +62,12 @@ Web3 (testnet-first): EVM · Solana · SUI · TRON · TON · NEAR.
 ## Links
 
 - Profile: https://github.com/mockmuse
+- Source: https://github.com/mockmuse/mockmuse-cli
 - Website: https://mockmuse.github.io
 - Web starter: https://github.com/mockmuse/mockmuse-web
 
 ## Safety
 
-This repo contains no seeds, private keys, passwords, wallet files, `.env` files, or tokens. Never add any.
+This package contains no seeds, private keys, passwords, wallet files, `.env` files, or tokens. Never add any.
 
 Motto: DYOR on everything.
